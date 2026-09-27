@@ -78,7 +78,6 @@ Como são centenas de ocupações diferentes, a tabela conta com uma busca por n
 
 <p align="center">
 <img width="559" height="158" alt="ocupacao2" src="https://github.com/user-attachments/assets/366a2b98-a2e1-416d-8ab0-2f3d99a24060" />
-</p>
 <img width="570" height="240" alt="ocupacao1" src="https://github.com/user-attachments/assets/48347c2c-e5ed-437c-ad7a-7258d3e347a3" />  
 </p>
 
