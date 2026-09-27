@@ -26,7 +26,10 @@ Os softwares utilizados neste projeto foram:
 
 ### 1 - Extração e Tratamento dos Dados (Python)
 
-<img width="660" height="531" alt="image" src="https://github.com/user-attachments/assets/69e397a8-cc18-414b-ab05-be83a582ebc0" />
+<p align="center">
+  <img width="660" height="531" alt="image" src="https://github.com/user-attachments/assets/69e397a8-cc18-414b-ab05-be83a582ebc0" />
+</p>
+
 
 
 O download dos microdados do Novo CAGED é automatizado diretamente do servidor FTP oficial do PDET (Ministério do Trabalho) pelo script baixar_caged.py: ele conecta, localiza o arquivo .7z de cada competência (mês/ano) e faz o download, já organizando em pastas no padrão AAAAMM.
