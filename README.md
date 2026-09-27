@@ -1,14 +1,8 @@
 # Painel de Mercado de Trabalho Formal (CAGED) - Guaxupé/MG
 
-![banner](./imagens/banner.png)
-
 ## Descrição do Projeto
 
-Este projeto tem como objetivo realizar a extração, tratamento e análise
-dos microdados do Novo CAGED (Cadastro Geral de Empregados e
-Desempregados), com foco no mercado de trabalho formal de Guaxupé/MG,
-além de desenvolver um painel interativo em Power BI para visualização
-dos indicadores de emprego, perfil do trabalhador e ocupações da região.
+Este projeto tem como objetivo realizar a extração, tratamento e análise dos microdados do Novo CAGED (Cadastro Geral de Empregados e Desempregados), com foco no mercado de trabalho formal de Guaxupé/MG, além de desenvolver um painel interativo em Power BI para visualização dos indicadores de emprego, perfil do trabalhador e ocupações da região.
 
 ## Tecnologia
 
@@ -32,21 +26,14 @@ Os softwares utilizados neste projeto foram:
 
 ### 1 - Extração e Tratamento dos Dados (Python)
 
-Hoje, o download dos microdados do Novo CAGED é feito manualmente no
-portal oficial do PDET (Ministério do Trabalho), em arquivos `.7z`.
-Cada arquivo mensal pode conter milhões de registros de movimentação
-em todo o Brasil, o que exige um processamento cuidadoso da memória.
-Por isso, a leitura é feita em **pedaços (chunks)** — o script
-processa o arquivo em blocos de 200 mil linhas por vez, em vez de
-carregar tudo de uma só vez, evitando travamentos mesmo em máquinas
-com recursos limitados.
+<img width="660" height="531" alt="image" src="https://github.com/user-attachments/assets/69e397a8-cc18-414b-ab05-be83a582ebc0" />
 
-A partir do download manual, o processo é automatizado: o script
-extrai os arquivos `.7z`, filtra (ainda durante a leitura em chunks)
-só as linhas do município de interesse e trata os dados com Pandas
-(mapeamento de códigos para descrições, tipos, cálculo de saldo etc).
-A base final é enriquecida com dados do IPEA (INPC e salário mínimo)
-para permitir análise de salário em valores reais, não só nominais.
+
+O download dos microdados do Novo CAGED é automatizado diretamente do servidor FTP oficial do PDET (Ministério do Trabalho) pelo script baixar_caged.py: ele conecta, localiza o arquivo .7z de cada competência (mês/ano) e faz o download, já organizando em pastas no padrão AAAAMM.
+
+Cada arquivo mensal pode conter milhões de registros de movimentação em todo o Brasil, o que exige um processamento cuidadoso da memória. Por isso, a leitura é feita em pedaços (chunks) — o script processa o arquivo em blocos de 200 mil linhas por vez, em vez de carregar tudo de uma só vez, evitando travamentos mesmo em máquinas com recursos limitados.
+
+Depois do download, o processo continua automatizado: os arquivos .7z são extraídos, filtrados (ainda durante a leitura em chunks) só pelas linhas do município de interesse, e tratados com Pandas (mapeamento de códigos para descrições, tipos, cálculo de saldo etc). A base final é enriquecida com dados do IPEA (INPC e salário mínimo) para permitir análise de salário em valores reais, não só nominais.
 
 **Próximo passo:** automatizar também o download direto do FTP
 oficial, eliminando a etapa manual.
